@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="card_id">CardID</string>
+    <string name="money">Money</string>
+    <string name="write">Write</string>
+
+</resources>
