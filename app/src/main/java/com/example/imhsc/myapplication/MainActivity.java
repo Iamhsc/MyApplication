@@ -111,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
                     btn_write.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            if (edit_m.getText().toString().equals("")){
+                                Toast.makeText(MainActivity.this, "",Toast.LENGTH_LONG).show();
+                                return;
+                            }
                             int w_data=0;
                             Toast.makeText(MainActivity.this, "Writing",Toast.LENGTH_LONG).show();
                             double rowMoney=Double.parseDouble(edit_m.getText().toString());
@@ -143,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                                     tv_money.setText("Money：" + df.format(rowMoney));
                                     Toast.makeText(MainActivity.this, "Write done",Toast.LENGTH_LONG).show();
                                 } else {
-                                    tv_money.setText("Write Error");
+                                    tv_money.setText("Write error");
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -157,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 } else {
-                    tv_money.setText("Reader Error");
+                    tv_money.setText("Read error");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
